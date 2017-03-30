@@ -1,5 +1,5 @@
 <?php
-$bdd=new PDO('mysql:host=localhost;dbname=stpaul;charset=utf8', 'root');
+$bdd=include '../includes/connect.php';
 $sejoursManager=new SejoursManager($bdd);
 $sejours=$sejoursManager->getList();
 ?>
