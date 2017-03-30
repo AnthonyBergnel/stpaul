@@ -1,5 +1,5 @@
 <?php
-$bdd=include '../includes/connect.php';
+include 'modules/includes/connect.php';
 $sejoursManager=new SejoursManager($bdd);
 $sejours=$sejoursManager->getList();
 ?>
