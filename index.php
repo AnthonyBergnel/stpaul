@@ -1,6 +1,6 @@
 <?php
-include_once 'modules/class/sejour.php';
-include_once 'modules/class/sejoursManager.php';
+include_once 'modules/class/object/sejour.php';
+include_once 'modules/class/manager/sejoursManager.php';
 
 include 'modules/includes/header.html';
 
