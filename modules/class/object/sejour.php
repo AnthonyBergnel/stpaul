@@ -64,12 +64,12 @@ class Sejour
 
 	public function afficheSejour()
 	{
-		$dateDeb=date_create($this->getSejdtedeb());
-		$dateFin=date("d/m/Y", strtotime(date_format($dateDeb, "Y-m-d")." + ".$this->getSejduree()." DAYS"));
+		$dateDeb=DateTime::createFromFormat("Y-m-d", $this->getSejdtedeb())->format("d/m/Y");
+		$dateFin=DateTime::createFromFormat("Y-m-d", date(strtotime($this->getSejdtedeb()." + ".$this->getSejduree()." DAYS")))->format("d/m/Y");
 		?>
         <h2><p><?php echo $this->getSejintitule(); ?></p></h2>
 		<?php echo $this->getSejmontantmbi().'€'; ?><br/>
-		<?php echo 'A partir du '.date_format($dateDeb, "d/m/Y")." au ".$dateFin; ?>
+		<?php echo 'A partir du '.$dateDeb." au ".$dateFin; ?>
 		<?php echo $this->getSejduree().' nuits';
 	}
 }
